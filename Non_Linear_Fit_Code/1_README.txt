@@ -9,3 +9,10 @@ Manual:
 To change the style of the plot, the Code has to be modified (See section ##Plotting at the bottom of the Code)
 Keep attention that no spaces are in the cells of "2_Lattice_Strain_Data" ; this could result in trouble. 
 The Code will not work if the folder structure will be changed
+
+
+The code 3_Non_Linear_Regression.py works for all regressions to the lattice strain model while 4_Non_Linear_Regression_constrained.py
+works for zircon only.
+
+The data in the test file is from Burnham, A.D., Berry, A.J., 2012. An experimental study of trace element partitioning between zircon and melt as a function of oxygen fugacity. Geochimica et Cosmochimica Acta 95, 196-212.
+
