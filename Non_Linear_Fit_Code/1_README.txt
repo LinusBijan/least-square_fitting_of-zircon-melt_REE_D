@@ -11,8 +11,7 @@ Keep attention that no spaces are in the cells of "2_Lattice_Strain_Data" ; this
 The Code will not work if the folder structure will be changed
 
 
-The code 3_Non_Linear_Regression.py works for all regressions to the lattice strain model just change the ri for the elements. The  4_Non_Linear_Regression_constrained.py
-works for zircon only.
+The code 3_Non_Linear_Regression.py works for all regressions to the lattice strain model just change the ionic radius ri for the elements. The  4_Non_Linear_Regression_constrained.py works for zircon only.
 
 The data in the test file is from Burnham, A.D., Berry, A.J., 2012. An experimental study of trace element partitioning between zircon and melt as a function of oxygen fugacity. Geochimica et Cosmochimica Acta 95, 196-212.
 
