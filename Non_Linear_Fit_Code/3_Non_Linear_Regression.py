@@ -52,7 +52,6 @@ P     = P[0]                                   # GPa
 N_a = 6.02214086 * 10**23;                     # 1/mol
 R   = 8.314472;                                # J/(K*mol)
 
-
 ### Calculation
 # Model function the data is fitted to
 def model(x, D_0, r_0, E):
@@ -73,11 +72,8 @@ Additional Information about the fitting methods:
 
 for more Information see: https://docs.scipy.org/doc/scipy/reference/generated/scipy.optimize.least_squares.html#scipy.optimize.least_squares
 
-"""
-             
+"""           
 popt, pcov = curve_fit(model, x, y,
-                      # starting points 
-                      # p0=[200, 1],
                       sigma=y_err,
                       # set this on "True" if errors are real errors on y_err. If "False" the errors are only used as relative weights
                       absolute_sigma =True,
@@ -90,7 +86,6 @@ popt, pcov = curve_fit(model, x, y,
 # Array with errors for D0,r0 and E
 perr = np.sqrt(np.diag(pcov))
 
-
 ### Prepare data for plotting
 # Factor including the constants  
 E_Conv_Factor = (R*(T)/N_a*1e21);
@@ -101,9 +96,6 @@ r0_out        = round(popt[1],3);
 r0_Sig        = round(np.absolute(perr[1]),3);
 E_out         = round(popt[2]*E_Conv_Factor,0);               
 E_Sig         = round(np.absolute(perr[2])*E_Conv_Factor,0);
-
-
-
 
 ### Plotting section
 
@@ -160,12 +152,7 @@ anchored_text_1 = AnchoredText("D$_{0}$"+ " = "
 anchored_text_2 = AnchoredText(str('{:.0f}'.format(P)) + " GPa",
                               prop=dict(fontsize = 11),
                               loc=1)
-
 ax.add_artist(anchored_text_1)
 ax.add_artist(anchored_text_2)
-
-
-
 # Print plot 
 plt.show()
-
