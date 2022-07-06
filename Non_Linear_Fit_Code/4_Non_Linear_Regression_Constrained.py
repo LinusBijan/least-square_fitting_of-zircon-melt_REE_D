@@ -52,7 +52,6 @@ P     = P[0]                                   # GPa
 N_a = 6.02214086 * 10**23;                     # 1/mol
 R   = 8.314472;                                # J/(K*mol)
 
-
 ### Calculation
 # Constant Q / constraint factor Q1 = 6489, Q2 = 7687
 Q = 6489
@@ -65,7 +64,6 @@ indi_var          = (-4*np.pi*N_a*constraint_constant)/R * 1/T
 def model(x, D_0, r_0):
     exponent = (indi_var*(0.5 * r_0 * (x - r_0) ** 2 + (1 / 3) * (x - r_0) ** 3))/((1.38 + r_0)**3)
     return D_0 * np.exp(exponent)
-
 
 # Curve fitting
 """
@@ -84,8 +82,6 @@ for more Information see: https://docs.scipy.org/doc/scipy/reference/generated/s
 """
              
 popt, pcov = curve_fit(model, x, y,
-                      # starting points 
-                      # p0=[200, 1],
                       sigma=y_err,
                       # set this on "True" if errors are real errors on y_err. If "False" the errors are only used as relative weights
                       absolute_sigma =True,
@@ -114,9 +110,7 @@ E_out         = round(((constraint_constant/((1.38
 # Taylor-Polynom 2nd degree to approximate the error of E
 E_Sig  = round(np.sqrt((((-3*constraint_constant/((1.38+popt[1])*1e-10)**4)*perr[1]*1e-10 + (6*constraint_constant/((1.38+popt[1])*1e-10)**5)*(perr[1]*1e-10)**2)/1e9)**2),1);
         
-
 ### Plotting Section
- 
 # helper array to plot curve
 x_help   = np.array(np.arange(0.8,1.2,step=0.01));
 # Plotting Data and Curve, Figsize in px/100 
@@ -129,7 +123,6 @@ plt.plot(x_help, model(x_help, *popt),
 # Plots data points with errorbar
 plt.errorbar(x, y, yerr=y_err, fmt='o',
              color = 'k')
-
 
 # Log on y axis in numbers 
 plt.yscale("log")
@@ -156,7 +149,6 @@ plt.ylim(bottom=0.001, top=10)
 # # Adds grid
 # ax.grid(True)
 
-
 # Text box with results including errors // To change the last digit change the number before "f"
 anchored_text_1 = AnchoredText("D$_{0}$"+ " = " 
                               + str('{:.2f}'.format(D0_out)) + " \u00B1 " 
@@ -171,11 +163,7 @@ anchored_text_1 = AnchoredText("D$_{0}$"+ " = "
 anchored_text_2 = AnchoredText(str('{:.0f}'.format(P)) + " GPa",
                               prop=dict(fontsize = 11),
                               loc=1)
-
 ax.add_artist(anchored_text_1)
 ax.add_artist(anchored_text_2)
-
-
 # Print Plot 
 plt.show()
-
