@@ -1,14 +1,4 @@
 # -*- coding: utf-8 -*-
-"""
-Created on Nov 2021
-@author: Linus Streicher 
-Vrije Universiteit Amsterdam, Faculty of Science, Geology and Geochemistry Cluster
-For questions and remarks write to 
-linusbijan@yahoo.de 
-
-
-With this Code you can calculate crystallisation temperatures of zircons from REE zircon-melt/bulk-rock partition coefficents.
-"""
 
 import numpy as np
 import pandas as pd
