@@ -1,5 +1,24 @@
 # -*- coding: utf-8 -*-
 
+"""
+Created on Nov 2020
+
+@author: Linus Streicher 
+
+Vrije Universiteit Amsterdam, Faculty of Science, Geology and Geochemistry Cluster
+
+
+For questions and remarks write to 
+
+linusbijan@yahoo.de 
+
+"""
+
+"""
+This python code is made to fit partitioning coefficents of REE and Sc in 
+zircon based on a predictive model by Blundy and Wood, 1994 & 1997, using the Lattice Strain Model by Brice,1975  
+"""
+
 import numpy as np
 import pandas as pd
 import matplotlib.ticker as ticker
