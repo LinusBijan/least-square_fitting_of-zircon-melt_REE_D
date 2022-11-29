@@ -53,9 +53,9 @@ N_a = 6.02214086 * 10**23;                     # 1/mol
 R   = 8.314472;                                # J/(K*mol)
 
 ### Calculation
-# Constant Q / constraint factor Q1 = 6489, Q2 = 7687
+# Constant Q / constraint factor Q1 = 6489, Q2 = 7827
 Q = 6489
-# Q = 7687
+# Q = 7827
 constraint_constant = (Q)*1e-21 # J
 indi_var          = (-4*np.pi*N_a*constraint_constant)/R * 1/T 
 
