@@ -15,7 +15,7 @@ from scipy.optimize import curve_fit
 
 # constants 
 constraint   = 6489e-21        # Q1
-#constraint   = 7687e-21       # Q2
+#constraint   = 7827-21       # Q2
 N_a = 6.02214086 * 10**23;     # 1/mol
 R   = 8.314472;                # J/(mol*K)
 r_0 = 0.94                     # Angström
