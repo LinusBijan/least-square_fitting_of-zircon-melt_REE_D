@@ -18,7 +18,8 @@ constraint   = 6489e-21        # Q1
 #constraint   = 7827-21       # Q2
 N_a = 6.02214086 * 10**23;     # 1/mol
 R   = 8.314472;                # J/(mol*K)
-r_0 = 0.94                     # Angström
+r_0 = 0.93                     # Angström (more information about this value in Streicher et al. 2023, GCA)
+# r_0 = 0.95                     # Angström (more information about this value in Streicher et al. 2023, GCA)
 
 # import inital data 
 initial_data = pd.read_excel("Partition_coefficents_data.xlsx")
