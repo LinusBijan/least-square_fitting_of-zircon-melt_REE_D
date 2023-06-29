@@ -36,7 +36,7 @@ indi_var =  (-4*np.pi*N_a*constraint)/(R)
 def model_constrainted(x, T):
     exponent = ((indi_var/T)*(0.5 * r_0 * (x - r_0) ** 2 + (1 / 3) * (x - r_0) ** 3))/((1.38 + r_0)**3)
     #factor   = np.exp((22420/T)-14.221)    # Rubatto and Hermann (2007)
-    factor   = np.exp((13594/T)-7.1266)     # Streicher et al. (2022)
+    factor   = np.exp((13594/T)-7.1266)     # Streicher et al. (2023)
     return factor * np.exp(exponent)
 
 # curve fit to determine T 
